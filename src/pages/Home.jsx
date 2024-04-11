@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
-import Product from "../components/Product";
+import Product from "../components/Product"; 
 
 const Home = () => {
   const API_URL = "https://fakestoreapi.com/products";
@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-wrap mx-auto max-w-[1080px] gap-4 my-14">
       {loading ? (
         <Spinner />
       ) : posts.length > 0 ? (
