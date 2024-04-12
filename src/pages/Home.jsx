@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
-import Product from "../components/Product"; 
+import Product from "../components/Product";
 
 const Home = () => {
   const API_URL = "https://fakestoreapi.com/products";
@@ -27,13 +27,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap mx-auto max-w-[1080px] gap-4 my-14">
+    <div
+      className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
+    lg:grid-cols-4 max-w-[1080px] p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]"
+    >
       {loading ? (
         <Spinner />
       ) : posts.length > 0 ? (
         posts.map((post) => <Product key={posts.id} post={post} />)
       ) : (
-        <div>No Post Available</div>
+        <div className="flex justify-center items-center">
+          No Post Available
+        </div>
       )}
     </div>
   );

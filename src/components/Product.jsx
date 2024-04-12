@@ -20,27 +20,37 @@ const Product = (prop) => {
 
   return (
     <div
-      className="border shadow-lg w-64 rounded-2xl flex flex-col justify-center 
+      className="border shadow-lg  rounded-2xl flex flex-col justify-center 
     items-center p-4 hover:shadow-2xl hover:scale-110 bg-white
-    transition-all duration-200"
+    transition-all duration-200 ease-in group"
     >
-      <p className="text-lg font-bold">{post.title}</p>
-      <p>{post.description}</p>
-      <img src={post.image} className="h-28" />
-      <div className="flex justify-between items-center">
-        <p className="text-green-600 font-extrabold tracking-wide">{`$${post.price} `}</p>
+      <p className="text-lg font-semibold text-gray-700 truncate w-40 mt-1">
+        {post.title}
+      </p>
+      <p className="w-40 text-gray-400 font-normal text-[10px] text-left">
+        {post.description.split(" ").slice(0, 10).join(" ") + "..."}
+      </p>
+      <img src={post.image} className="h-[150px] my-2" />
+      <div className="flex justify-between items-center w-full mt-5 ">
+        <p className="text-green-600 font-bold tracking-wide">
+          {`$${post.price} `}
+        </p>
 
         {cart.some((p) => p.id == post.id) ? (
           <button
             onClick={removeFromCart}
-            className="py-1 px-4 border-black border-2 rounded-full uppercase"
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+            text-[12px] p-1 px-3 uppercase group-hover:bg-gray-700 group-hover:text-white
+            transition duration-300 ease-in"
           >
             Remove Item
           </button>
         ) : (
           <button
             onClick={addToCart}
-            className="py-1 px-4 border-black border-2 rounded-full uppercase"
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+            text-[12px] p-1 px-3 uppercase group-hover:bg-gray-700 group-hover:text-white
+            transition duration-300 ease-in group"
           >
             Add to Cart
           </button>
