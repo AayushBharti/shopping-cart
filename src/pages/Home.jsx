@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div
       className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
-    lg:grid-cols-4 max-w-[1080px] p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]"
+    lg:grid-cols-4 max-w-[1080px] p-2 mt-10 mx-auto gap-x-5 gap-y-8 min-h-[80vh]"
     >
       {loading ? (
         <Spinner />
